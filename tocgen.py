@@ -29,7 +29,7 @@ def set_toc_titles():
                 # retrieve and copy in the document title
                 with open(fn) as f:
                     title = f.readline()[1:].strip()
-                    if '(' in title or ')' in title:
+                    if "(" in title or ")" in title:
                         raise ValueError("Title may not contain parentheses!")
                     line = re.sub(r"\[.*\]", f"[{title}]", line)
 
@@ -37,6 +37,24 @@ def set_toc_titles():
 
     with open("README.md", "w") as f:
         f.write("".join(new_lines))
+
+
+def add_toc_links():
+    """
+    Adds a link back to README.md for all sub-pages (in case it is not yet there)
+    """
+    md_files = glob.glob(path.join("pages", "*.md"))
+
+    for md_file in md_files:
+        with open(md_file) as f:
+            lines = f.readlines()
+
+        if "README.md" not in lines[-1]:
+            lines.append("\n\n")
+            lines.append("<<< Go back to the [table of contents](../README.md)")
+
+        with open(md_file, "w") as f:
+            f.write("".join(lines))
 
 
 def check_links():
@@ -70,4 +88,5 @@ def check_links():
 
 if __name__ == "__main__":
     set_toc_titles()
+    add_toc_links()
     check_links()

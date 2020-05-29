@@ -31,3 +31,6 @@ is also handy to swap text between to places.
 * ``gv`` Repeat last visual selection. Saves quite a few keystrokes sometimes.
 
 (If you have come this far: what about a round of [VimGolf](http://www.vimgolf.com/)?)
+
+
+<<< Go back to the [table of contents](../README.md)
