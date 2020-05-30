@@ -51,7 +51,8 @@ def add_toc_links():
 
         if "README.md" not in lines[-1]:
             lines.append("\n\n")
-            lines.append("<<< Go back to the [table of contents](../README.md)")
+            lines.append("<<< Go back to the [table of contents](../README.md) "
+                         "|| Follow on [twitter](https://twitter.com/EberhardHansis)")
 
         with open(md_file, "w") as f:
             f.write("".join(lines))

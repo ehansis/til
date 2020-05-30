@@ -144,4 +144,4 @@ def scatter_label_placement(point_x, point_y, k, epsilon=1.0e-6, random_seed=345
 
 
 
-<<< Go back to the [table of contents](../README.md)
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)

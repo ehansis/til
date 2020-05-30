@@ -21,4 +21,6 @@ Regarding the last point: I think that improved quality is a generally undervalu
 of automation. More on that later.
 
 
-<<< Go back to the [table of contents](../README.md)
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)

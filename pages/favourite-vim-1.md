@@ -33,4 +33,6 @@ is also handy to swap text between to places.
 (If you have come this far: what about a round of [VimGolf](http://www.vimgolf.com/)?)
 
 
-<<< Go back to the [table of contents](../README.md)
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)
