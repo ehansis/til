@@ -43,7 +43,7 @@ Examples:
 
 * PyCharm has great functionality for refactoring, like changing a function name and automatically updating all references.
   This can save you a lot of time - but only if you know that it exists and how to use it.
-* I know many people who write Python code and debug with ``print`` and ``exit`` statements, even when working inside a modern IDE.
+* I know people who write Python code and debug with ``print`` and ``exit`` statements, even when working inside a modern IDE.
   Yes, sometimes this might work, but often a good visual debugger greatly speeds up your development.
 * VIM has so many useful features that you will never stop learning. Do you write HTML? Then the ``cit`` sequence might
   come in handy - change the content of a tag (Change In Tag). Also, there is [VimGolf](www.vimgolf.com)!
