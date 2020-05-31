@@ -75,6 +75,8 @@ def check_links():
             match = re.search(r"\]\((.*?)\)", line)
             if match:
                 link = match.group(1)
+                if len(link) == 0:
+                    print(f"{md_file}: Empty URL found")
 
                 if link.startswith("http"):
                     try:

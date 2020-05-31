@@ -4,7 +4,44 @@
 And I would not want to miss it any more.
 
 Black formats your code according to strict rules, while making sure that the code's behaviour doesn't change.
-Since I discovered it, I have hardly spent any time formatting my code.
+Since I discovered it, I have hardly spent any time manually formatting my code.
+
+Here is some random example code (from a [Code Kata](http://codekata.com/) exercise) before Black:
+```python
+import re
+
+def get_cols():
+    with open("weather.dat") as f:
+            first_line = f.readline()
+
+    matches=re.finditer(r' +\S+', first_line)
+
+    return {m.group().strip(): {'start': m.start(), 'num': m.end() - m.start()} for m in matches}
+```
+
+Here it is after:
+```python
+import re
+
+
+def get_cols():
+    with open("weather.dat") as f:
+        first_line = f.readline()
+
+    matches = re.finditer(r" +\S+", first_line)
+
+    return {
+        m.group().strip(): {"start": m.start(), "num": m.end() - m.start()}
+        for m in matches
+    }
+```
+
+Some things that happened are:
+* Quotes normalized to all double quotes
+* Long lines broken up
+* Correct spaces around operators
+* Normalized number of empty lines before functions
+* Normalied indentation
 
 Running Black on the current source file is mapped to a keyboard shortcut in my IDE (``Cmd+Ctrl+B``, if you wanted to know), and
 I run it every time I have finished a block of code or a specific change. 
