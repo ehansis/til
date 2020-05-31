@@ -23,7 +23,7 @@ I could be tempted to go into the parentheses where I want to paste and
 However, the delete replaces the content of the default register! 
 So if I already have the text I want to paste in the
 default register, it would be overwritten and the same text pasted back.
-If, instead, I ``vi(`` to select the inside of the parenteses and then ``p``
+If, instead, I ``vi(`` to select the inside of the parentheses and then ``p``
 in visual mode, I can paste the (previous) contents of the default register.
 *After* pasting, I have the replaced text in the default register, so this
 is also handy to swap text between to places.

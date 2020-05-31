@@ -1,8 +1,8 @@
-# Tooling for this page
+# Tools I wrote for this page
 
 Here is an interesting piece of data (that I just now made up): 
 53% of programmers who use Markdown for a blog-like site 
-write their own tooling for managing the content.
+write their own tools for managing the content.
 No wonder then that this repo [includes](../tocgen.py) ``tocgen.py``, 
 my small (but sure to be growing) collection of helper functions for this site.
 
