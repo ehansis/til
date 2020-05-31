@@ -80,11 +80,11 @@ def check_links():
                     try:
                         requests.get(link)
                     except requests.HTTPError:
-                        print(f"Linked URL not found: {link}")
+                        print(f"{md_file}: Linked URL not found: {link}")
                 else:
                     link = path.join(path.dirname(md_file), link)
                     if not path.exists(link):
-                        print(f"Linked file not found: {link}")
+                        print(f"{md_file}: Linked file not found: {link}")
 
 
 if __name__ == "__main__":
