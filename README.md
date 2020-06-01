@@ -6,9 +6,9 @@ New posts will be announced on [twitter](https://twitter.com/EberhardHansis).
 
 ## Content, newest first
 
-* [Deliberate practice for programmers](pages/deliberate-practice-programmers.md)
-* [Label placement for scatter plots with Python and networkx](pages/scatter-label-placement.md)
-* [Tools I wrote for this page](pages/til-tooling.md)
+* [Deliberate practice for programmers](pages/deliberate_practice_programmers.md)
+* [Label placement for scatter plots with Python and networkx](pages/scatter_label_placement.md)
+* [Tools I wrote for this page](pages/til_tooling.md)
 * [Favourite VIM features, Episode 1](pages/favourite-vim-1.md)
 
 
