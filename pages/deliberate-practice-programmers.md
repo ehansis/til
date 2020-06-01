@@ -14,7 +14,7 @@ about deliberate practice, how to define it and its benefits.
 However, it was not obvious to me how I could leverage it as a programmer to improve my skills.
 Of course, I get better each day by solving new problems, reading technical material and following other people's code.
 This is very important, but I would not count that as deliberate practice.
-Instead, here are some suggestions for deliberate practice I have found to be beneficial for my programming skills:
+Instead, here are some suggestions for deliberate practice that I have found to be beneficial for my programming skills:
 
 
 ## Finger training: learn to type better
