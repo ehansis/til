@@ -1,13 +1,13 @@
-# Wrap your Python results in dataclass or attrs
+# Wrap your Python analytics results in dataclass or attrs
 
 When writing data queries or analysis functions, it is often necessary to pass back multiple result values.
-As an example, let's assume that you write a query for the average number of posts per day for a user, 
+As an example, let's assume that you write a query function for the average number of posts per day for a user, 
 which passes back 
 
-* The user's numerical ID
-* The user's nick name
-* The total number of posts by that user
-* The average number of posts per day
+* the user's numerical ID,
+* the user's nick name,
+* the total number of posts by that user and
+* the average number of posts per day.
 
 ## Your options
 
