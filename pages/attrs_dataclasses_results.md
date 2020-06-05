@@ -1,4 +1,4 @@
-# Wrap your Python analytics results in dataclass or attrs
+# Wrap your Python analytics results in a dataclass or attrs
 
 When writing data queries or analysis functions, it is often necessary to pass back multiple result values.
 As an example, let's assume that you write a query function for the average number of posts per day for a user, 
@@ -167,3 +167,6 @@ This is the topic of a separate, future post.
 In ``dataclass`` objects, it appears that something similar could be done using
 [post-init processing](https://docs.python.org/3.7/library/dataclasses.html#post-init-processing).
 I have not tried that myself, though.
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)
