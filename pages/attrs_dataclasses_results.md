@@ -21,7 +21,7 @@ I want to advocate for ``attrs`` or ``dataclasses`` because:
 
 * they reduce the probability of errors, compared to ``tuple``, ``namedtuple`` and ``dict``, by
   providing a clear description of the available data fields and how to access them;
-* they allow for type annontation of the data fields;
+* they allow for type annotation of the data fields;
 * and they are much quicker to implement and offer more functionality than hand-coded classes. 
 
 **Note:** To install ``attrs``, do ``pip install attrs``. The pip package ``attr`` without the 's' is a different package!
@@ -91,7 +91,7 @@ If you wanted to pass back the JSON data from a [Flask](https://flask.palletspro
 from flask import jsonify
 
 @app.route('/avg_posts')
-def get_current_user():
+def average_posts():
     # r = ... query call ...
     return jsonify(attr.asdict(r))
 ```

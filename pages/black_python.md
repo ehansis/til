@@ -44,7 +44,7 @@ Some things that happened are:
 * Normalized number of empty lines before functions
 * Normalized indentation
 
-I added a keyborad shortcut in my IDE (``Cmd+Ctrl+B``, if you wanted to know) for
+I added a keyboard shortcut in my IDE (``Cmd+Ctrl+B``, if you wanted to know) for
 running Black on the current source file.
 I run it every time I have finished a block of code or a specific change. 
 Running it has become so much of a habit that I often catch myself hitting ``Cmd+Ctrl+B`` in TeX, Markdown or JavaScript.
