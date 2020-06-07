@@ -1,7 +1,8 @@
 # Getting Complex
 ... and understanding Simple along the way.
 
-## Go watch this talk
+
+## This one amazing talk will change how you see the world.
 
 This post is based on an, in internet-terms ancient, talk by Rich Hickey, 
 entitled ["Simple Made Easy"](https://www.infoq.com/presentations/Simple-Made-Easy/).
@@ -33,8 +34,8 @@ Here are a few examples where complexity may arise:
 
 ### Not so DRY
 
-(I heard this example elsewhere but don't remember the source, sorry.) Imagine you are refactoring
-a big code base. You discover a bit of functionality, applying colors for formatting error messages,
+Imagine you are refactoring a big code base. 
+You discover a bit of functionality, applying colors for formatting error messages,
 that has been re-implemented several times in different parts of the system, e.g. in the database backend,
 in the user interface and in administrative tools.
 You might be tempted to unify that in one spot, in a library of utility functions, and replace the respective code
@@ -44,13 +45,14 @@ That's great, right? It follows the [DRY principle](https://de.wikipedia.org/wik
 However, now you have complected parts of the system - database backend, user interface and admin tools - that
 maybe were not complected before and never should have been!
 This can cause all kinds of headaches in the long run, like the inability to split apart the code of these
-three constituents, added complexity when wanting to change the functionality for just one part of the system or
+three constituents; added complexity when wanting to change the functionality for just one part of the system; or
 simply making the code harder to understand.
 
 Of course, often times it is very valuable to stay DRY.
 But it is precisely this notion of complexity - tying things together that should be separate - that has to 
 be considered carefully.
 
+(I read/heard this example elsewhere but don't remember the source, sorry.)
 
 ### State
 
@@ -80,19 +82,20 @@ But for exporting them to SVG or PDF, I need to run the visualization, which end
 through a headless browser.
 I understand that this is inherent to the design of Altair, being a wrapper around [Vega-Lite](https://vega.github.io/vega-lite/docs/).
 And usually it works beautifully.
-But I just hate the thought that I am dependent on [Selenium](https://www.selenium.dev/selenium/docs/api/py/)
+But I'm annoyed by the fact that I am dependent on [Selenium](https://www.selenium.dev/selenium/docs/api/py/)
 and [ChromeDriver](https://chromedriver.chromium.org/) or [GeckoDriver](https://firefox-source-docs.mozilla.org/testing/geckodriver/)
 just to save my charts.
-(Don't get me wrong here: Altair is great and I very much recommend it. It's just the feeling of complexity that annoys me.)
+(I will still continue to rely on Altair for all my plotting needs, though!)
 
 
 ## KISS (Keep it simple, stupid!)
 
 I find this notion of complexity very helpful when considering design choices.
-The problems you work on are complex enough in and of themselves.
-Avoid inadvertent complexity from design and technology choices, spend your effort on problem complexity instead.
 
 What I have left out here is the difference between 'easy' and 'simple', which I leave to Rich to discuss.
 Now it's time to go watch [the talk](https://www.infoq.com/presentations/Simple-Made-Easy/)!
 
 
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)
