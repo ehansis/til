@@ -22,7 +22,7 @@ I want to advocate for ``attrs`` or ``dataclasses`` because:
 * they reduce the probability of errors, compared to ``tuple``, ``namedtuple`` and ``dict``, by
   providing a clear description of the available data fields and how to access them;
 * they allow for type annotation of the data fields;
-* and they are much quicker to implement and offer more functionality than hand-coded classes. 
+* and they are much quicker to implement and offer more built-in functionality than hand-coded classes. 
 
 **Note:** To install ``attrs``, do ``pip install attrs``. The pip package ``attr`` without the 's' is a different package!
 Nevertheless, after installing ``attrs`` you import it as ``attr``, without the 's'. 
@@ -162,7 +162,8 @@ Instead of scattering the formatting function calls throughout my code, this can
 To do this, I have implemented a small 'derived attribute' extension for ``attrs``, that automatically computes attribute values
 based on other attributes.
 For example, a string field ``rating_str`` would automatically be generated from the numerical field ``rating``.
-This is the topic of a separate, future post.
+
+This is going to be the topic of a separate, future post.
 
 In ``dataclass`` objects, it appears that something similar could be done using
 [post-init processing](https://docs.python.org/3.7/library/dataclasses.html#post-init-processing).
