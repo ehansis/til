@@ -6,7 +6,7 @@ New posts will be announced on [twitter](https://twitter.com/EberhardHansis).
 
 ## Content, newest first
 
-* [Wrap your Python analytics results in a dataclass or attrs](pages/attrs_dataclasses_results.md)
+* [Wrap your Python analytics results in dataclass or attrs](pages/attrs_dataclasses_results.md)
 * [Just make it black: stop worrying about Python code formatting](pages/black_python.md)
 * [Deliberate practice for programmers](pages/deliberate_practice_programmers.md)
 * [Label placement for scatter plots with Python and networkx](pages/scatter_label_placement.md)
