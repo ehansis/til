@@ -2,7 +2,7 @@
 
 If you asked me for the current population of Brazil, I could tell you that it is [212,481,856](https://www.worldometers.info/world-population/) people.
 This is far more accurate than you probably needed to know (and it's already outdated when you read this).
-It's probably more helpful if I told you that it is 210,000,000 people.
+It's probably more helpful if I told you that Brazil's population is 212,000,000 people.
 
 When presenting large numbers to the readers of your analytics reports and dashboards, it usually helps to limit the precision.
 The additional digits don't add meaningful information and may distract. The numbers are harder to comprehend.

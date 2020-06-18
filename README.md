@@ -6,6 +6,7 @@ New posts will be announced on [twitter](https://twitter.com/EberhardHansis).
 
 ## Content, newest first
 
+* [Meaningful string representations for large numbers in Python](pages/sround.md)
 * [Quick derived attributes in Python attrs classes](pages/derived_attrib.md)
 * [Getting Complex](pages/complexity.md)
 * [Wrap your Python analytics results in dataclass or attrs](pages/attrs_dataclasses_results.md)
