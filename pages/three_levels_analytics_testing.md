@@ -177,10 +177,10 @@ Then you will have to adapt the constraints after inspecting the data.
 This might be a minor inconvenience, but you will get to actually check the data in question instead
 of blindly piping everything through your analytics process.
 
-I have built ELT pretty long and complicated ETL pipelines, in which each processing step was
+I have built pretty long and complicated ETL pipelines, in which each processing step was
 followed by such a consistency check.
 Often, I enrich my test tasks in the pipeline with additional consistency checks that fall outside
-the domain of TDDA (e.g., checking that data is consistent between related objects).
+the domain of TDDA (e.g. checking that data is consistent between related objects).
 
 
 
