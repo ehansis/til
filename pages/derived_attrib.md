@@ -147,4 +147,6 @@ You are bound to get into trouble when you try to do too complicated data transf
 But for string formatting and related tasks I find this quite useful.
 
 
-<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

@@ -69,4 +69,6 @@ One motivation was to get better at [TDD](https://en.wikipedia.org/wiki/Test-dri
 but I also learned a lot of other things.
 Besides, a Kata can be a nice break from regular coding work or a nice routine to start your day.
 
-<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis)
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

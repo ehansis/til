@@ -4,24 +4,25 @@ Software engineers have long known that automated testing is an indispensable to
 Among the most famous testing approaches is [TDD - Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development),
 which involves short cycles of writing tests _first_ and then the features that make the tests pass.
 
-Data analytics people (Data Engineers, Data Scientists, Data Analysts, or whatever else you care to call yourself)
+Data people (Data Engineers, Data Scientists, Data Analysts, or whatever else you like to call yourself)
 also write software, in a sense.
 They use full-featured programming languages, script languages or GUI-based tools to define data flows,
 analysis processes and visualization.
-However, I often get the impression that testing is not so much of a priority in the data analytics world.
+However, I tend to get the impression that testing is not so much of a priority in the data analytics world.
 
-Is that OK? Well, if you only ever work on your own little toy problems and if nobody makes decisions
+Is that OK? Well, if you only work on toy problems and if nobody makes decisions
 based on your analytics, not even you, it probably is.
 But as soon as your work might influence business decisions, policy, science or something else of importance,
-I want to claim that doing data analytics without automated testing is reckless and unprofessional.
+testing should be an integral part of any data workflow.
+If you do relevant data analytics without automated testing, I admire your bravery and wish you the best of luck (and luck is what you'll need).
 
 ``rant start``
-Granted, if you work with some [colorful](https://www.qlik.com) [pointy-clicky](https://www.tableau.com) [tool](https://powerbi.microsoft.com/)
+Granted, if you work with some [colorful](https://www.qlik.com) [pointy-clicky](https://www.tableau.com) [GUI-based tool](https://powerbi.microsoft.com/)
 or even a [spreadsheet](https://products.office.com/excel), your technology choice makes it very hard to implement proper testing.
 Such tools also tend to hide the complexity of your analysis, raising the risk for [mistakes](http://www.eusprig.org/horror-stories.htm).
-Pairing this with the fact that version control and true collaborative work are close to impossible with these tools
+Pairing this with the fact that version control and true collaborative work are close to impossible with such tools
 (anybody up for merging changes from the 'workbooks' of three colleagues into one?) makes me wonder
-why such tools are used at all for important data anlytics work in professional environments.
+why such tools are used at all for important data analytics work in professional environments.
 ``rant end``
 
 
@@ -42,13 +43,13 @@ The ideas themselves can probably also be implemented in any other (code-based, 
 ## Level 1: assert
 
 The good old ``assert`` statement is very simple and effective for adding a bit of testing to your code.
-An ``assert`` statment checks that a certain condition is met. If not, it raises an exception (which usually stops the application).
+An ``assert`` statement checks that a certain condition is met. If not, it raises an exception (which usually stops the application).
 
 Let's consider a simple example: You are analyzing sales data and want to know the revenue share of your product categories.
 So you might have code like this:
 ```python
-category_revenue = sales.groupby('category')['price'].sum()
-category_share = category_revenue / category_revenue.sum()
+category_revenue = sales.groupby("category")["price"].sum()
+category_share = category_revenue / total_revenue
 ```
 
 This is quite straightforward, and you will probably get the desired result.
@@ -59,8 +60,9 @@ assert abs(category_share.sum() - 1) < 1.0e-6, "Inconsistent category share"
 
 This tests that the revenue shares of the different product categories actually add up to 1 (leaving a bit of wiggle room for round-off errors).
 If this condition is not met, it prints the error message ``"Inconsistent category share"`` and stops execution.
+This might happen, for example, if you calculated ``total_revenue`` from slightly different data than ``category_revenue``.
 
-I like to use ``assert`` statments whenever I know that something non-trivial should be true in the code.
+I like to use ``assert`` statements whenever I know that something non-trivial should be true in the code.
 Some other examples:
 
 * Check that numbers are non-negative or non-zero, when they are supposed to always be
@@ -101,7 +103,7 @@ I'm going to provide a brief glimpse into the 'constraints generation and verifi
 Go check out the documentation and tutorials on [tdda.info](http://www.tdda.info) to learn more, I highly recommend it.
 
 Imagine that your are analyzing a dataset about portrait paintings.
-You scrape the data from [Wikidata](https://www.wikidata.org) and dump them into a Pandas DataFrame called ``df``.
+You scrape the data from [WikiData](https://www.wikidata.org) and dump them into a Pandas DataFrame called ``df``.
 You would like to know if the scraping worked.
 But you also want check further runs of your pipeline that may result in different data, 
 so you can't simply check against reference values.
@@ -127,7 +129,7 @@ This yields constraints in JSON:
             "type": "string",
             "min_length": 23,
             "max_length": 113,
-            "max_nulls": 0,
+            "max_nulls": 0
         },
         "width": {
             "type": "real",
@@ -146,7 +148,7 @@ This yields constraints in JSON:
         "inception": {
             "type": "integer",
             "min": 1421,
-            "max": 2019,
+            "max": 2019
         }
     }
 }
@@ -183,4 +185,13 @@ Often, I enrich my test tasks in the pipeline with additional consistency checks
 the domain of TDDA (e.g. checking that data is consistent between related objects).
 
 
+## You win!
 
+... well, hopefully you do. Any level of testing will not make your analyses infallible and bullet-proof.
+But you could at least try to catch those bugs, right?
+
+
+
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
