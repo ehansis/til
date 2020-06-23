@@ -6,6 +6,7 @@ New posts will be announced on [twitter](https://twitter.com/EberhardHansis).
 
 ## Content, newest first
 
+* [Three Levels of Testing in Data Analytics](pages/three_levels_analytics_testing.md)
 * [Meaningful string representations for large numbers in Python](pages/sround.md)
 * [Quick derived attributes in Python attrs classes](pages/derived_attrib.md)
 * [Getting Complex](pages/complexity.md)
