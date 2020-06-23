@@ -83,22 +83,22 @@ You can find an example of a unit test in my recent post on [string representati
 Writing unit tests takes some discipline, especially if your are more in the exploratory mode and want to 
 get some exciting analytics done.
 But it hugely pays off in the long run.
-Actually, I don't need to sing the praise of unit testing here, plenty of smart folks 
+Actually, I don't need to sing the praises of unit testing here, plenty of smart folks 
 have [done that before me](https://duckduckgo.com/?q=why+should+i+do+unit+testing&ia=web).
 
-Unit testing is also useful for checking your data visualizations, e.g. querying a data display from your web tool,
-parsing the chart SVG and checking if what's in there actually matches your input data.
-(Try doing that with Ex*el charts...)
+Unit testing is also useful for checking your data visualizations, e.g. querying an SVG chart from your web UI,
+parsing it and checking if the contents actually match the input data.
+(Try doing that with your 'workbook' or 'spreadsheet' charts...)
 
 
-## Level 3: consistency checks
+## Level 3: constraint checks
 
 It's very hard to prepare your code for any possible data that might be thrown at it.
-But often you can define consistency checks on your input data, your intermediate results and your outputs, that give you a better
+But often you can define constraint checks on your input data, your intermediate results and your outputs, that give you a better
 idea of how well things are going.
 
-I got into writing checks after learning about the [TDDA - Test Driven Data Analytics](http://www.tdda.info) library
-by Nicholas J. Radcliffe of [Stochastic Solutions](http://stochasticsolutions.com/).
+I got into writing constraint checks after learning about the [TDDA - Test Driven Data Analytics](http://www.tdda.info) library
+by Nick Radcliffe of [Stochastic Solutions](http://stochasticsolutions.com/) and his collaborators.
 I'm going to provide a brief glimpse into the 'constraints generation and verification' portion of that library.
 Go check out the documentation and tutorials on [tdda.info](http://www.tdda.info) to learn more, I highly recommend it.
 
@@ -159,9 +159,10 @@ and whose string length is between 17 and 65.
 The constraints on the painting's ``creator`` are similar.
 The painting dimensions ``width`` and ``height`` have numerical constraints.
 The year of ``inception`` must be integer, within certain bounds, but may actually be empty if it is not known.
-Note: TDDA detects those constraints from example data, automatically! Even if you need to modify them afterwards, TDDA provides an excellent starting point.
+Note: TDDA detects those constraints from example data, automatically! Even if you need to modify the constraints afterwards,
+e.g. to add some slack, TDDA provides an excellent starting point.
 
-Now on any future pipeline run you can load those constraints and verify your data against them:
+Now on any future scraping run you can load those constraints and verify your data against them:
 ```python
 from tdda.constraints.pd.constraints import verify_df, detect_df
 
@@ -173,15 +174,14 @@ print(str(result))
 detect_df(df, 'constraints_01.json', outpath='failures_02.csv', output_fields=[], per_constraint=True)
 ```
 
-If your input data change, the constraints will sometimes complain about 'valid' data that fall outside
-the prescribed ranges.
-Then you will have to adapt the constraints after inspecting the data.
+If your input data contains new 'valid' data that is outside the prescribed ranges, the verification will complain about it.
+Then you will have to inspect the data and adapt the constraints accordingly.
 This might be a minor inconvenience, but you will get to actually check the data in question instead
 of blindly piping everything through your analytics process.
 
-I have built pretty long and complicated ETL pipelines, in which each processing step was
-followed by such a consistency check.
-Often, I enrich my test tasks in the pipeline with additional consistency checks that fall outside
+I have built some pretty long and complicated ETL pipelines.
+In doing that, I found it extremely helpful to follow each processing step with a constraint or consistency check.
+Often, I enrich these tests with additional checks that fall outside
 the domain of TDDA (e.g. checking that data is consistent between related objects).
 
 
