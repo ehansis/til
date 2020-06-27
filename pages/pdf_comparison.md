@@ -128,3 +128,6 @@ with (Image(filename=args.left, resolution=args.dpi)) as left_pdf:
 package [wand](http://docs.wand-py.org) to get it going.
 The [wand docs](http://docs.wand-py.org) include installation instructions for various platforms.
 You can do that, I bet! :-)
+
+
+<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
