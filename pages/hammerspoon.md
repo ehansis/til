@@ -1,4 +1,4 @@
-# Hammerspoon: Go Crazy on OS X Automation
+# Hammerspoon: OS X Automation for Pros
 
 What is [Hammerspoon](http://www.hammerspoon.org/)? The web page says
 
@@ -6,11 +6,9 @@ What is [Hammerspoon](http://www.hammerspoon.org/)? The web page says
     At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. 
     What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.
     
-Hammerspoon let's you do tons of fun things. For a keyboard-loving VIMhead like me it's a great way to do even more
-things without having to send my fingers on that loooong journey to the trackpad.
-
-It wouldn't make much sense if I tried to summarize all the things that you can do with Hammerspoon,
-you should read the docs on [the website](http://www.hammerspoon.org/) instead.
+Hammerspoon let's you do tons of fun things. For a keyboard-loving VimHead like me it's a great way to get even more done
+without having to send my fingers on that loooong journey to the trackpad.
+To explore all the available features, read the docs on [the Hammerspoon website](http://www.hammerspoon.org/).
 Here's how I use and configure it:
 
 ## My Hammerspoon config
