@@ -1,7 +1,7 @@
 # Pixel-Perfect PDF comParison in Python
 
-If you regularly work with PDF documents, there is sometimes the need to compare two files and find the differences.
-For example, I regularly compile analytics reports to PDFs and sometimes want to determine precisely what
+When working with PDF documents, there is sometimes the need to compare two PDFs and find the differences.
+For example, I regularly compile analytics reports to PDFs and sometimes want to see precisely what
 has changed between two versions. Another use case would be comparing drafts of a scientific paper.
 
 Of course, if you have access to source files, e.g. the LaTeX code, comparing that is the best way.
@@ -17,15 +17,15 @@ The process is very simple:
 * compares the pixels, and 
 * outputs an image with the difference pixels highlighted in red.
 
-Here is a page of example output:
+Here is a page of example output (find the two differences!):
 
 ![example PDF diff](../images/diff_000001.png)
 
 You can choose to ignore all pages with very small differences and not produce output for those
 (via the ``--iit`` and ``--diii`` options).
 
-This only works if the page layout between the documents is the same. 
-If you insert a paragraph somewhere that shifts all text in one documet down by 10 rows, the differences after
+This way of comparing PDFs only works if the page layout between the documents is the same. 
+If you insert a paragraph somewhere that shifts all text in one document down by 10 rows, the differences after
 that paragraph will be mostly meaningless (until there is a 'synchronizing' page break).
 But it works great to find subtle differences in charts, or other smaller changes that leave the
 pagination intact.
@@ -122,12 +122,11 @@ with (Image(filename=args.left, resolution=args.dpi)) as left_pdf:
 ```
 
 
-## Installation
+## Getting this to run
 
 ... might be a bit tricky, because you need [ImageMagick](https://imagemagick.org/index.php) and the Python
-package [wand](http://docs.wand-py.org) to get it going.
+[wand](http://docs.wand-py.org) package to get it going.
 The [wand docs](http://docs.wand-py.org) include installation instructions for various platforms.
-You can do that, I bet! :-)
 
 
 <<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
