@@ -6,6 +6,7 @@ New posts will be announced on [twitter](https://twitter.com/EberhardHansis).
 
 ## Content, newest first
 
+* [def tree\(\): return defaultdict\(tree\)](pages/one_line_tree_defaultdict.md)
 * [Pixel-Perfect PDF comParison in Python](pages/pdf_comparison.md)
 * [Hammerspoon: OS X Automation for Pros](pages/hammerspoon.md)
 * [Three Levels of Testing in Data Analytics](pages/three_levels_analytics_testing.md)

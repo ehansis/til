@@ -29,8 +29,8 @@ def set_toc_titles():
                 # retrieve and copy in the document title
                 with open(fn) as f:
                     title = f.readline()[1:].strip()
-                    if "(" in title or ")" in title:
-                        raise ValueError("Title may not contain parentheses!")
+                    if re.search(r'(?<!\\)[()]', title):
+                        raise ValueError("Title may not contain un-escaped parentheses!")
                     line = re.sub(r"\[.*\]", f"[{title}]", line)
 
         new_lines.append(line)
