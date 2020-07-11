@@ -1,4 +1,4 @@
-# Weighted Percentile Rank to Benchmark in Skewed Distributions
+# Use a Weighted Percentile Rank to Benchmark in Skewed Distributions
 
 When you are presenting data, for example in a report or dashboard, it is often a good idea to indicate if
 a certain value is 'big' or 'small', compared to benchmarking data.
