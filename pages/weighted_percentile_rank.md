@@ -171,14 +171,14 @@ def weighted_percentile_rank(s):
 
 Let's look at the example city stats again, now including the weighted percentile rank:
 ```text
-Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted percentile rank =  100.000
-Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.992, weighted percentile rank =   96.063
-Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.950, weighted percentile rank =   90.082
-Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.470, weighted percentile rank =   71.405
-Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   97.150, weighted percentile rank =   50.919
-Asselfingen : population =     1075, n-th largest =   6908, percentile rank =   42.771, weighted percentile rank =    3.018
-Elend       : population =      583, n-th largest =   8889, percentile rank =   26.357, weighted percentile rank =    1.178
-Sorge       : population =      140, n-th largest =  11705, percentile rank =    3.024, weighted percentile rank =    0.037
+Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted perc. rank =  100.000
+Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.992, weighted perc. rank =   96.063
+Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.950, weighted perc. rank =   90.082
+Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.470, weighted perc. rank =   71.405
+Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   97.150, weighted perc. rank =   50.919
+Asselfingen : population =     1075, n-th largest =   6908, percentile rank =   42.771, weighted perc. rank =    3.018
+Elend       : population =      583, n-th largest =   8889, percentile rank =   26.357, weighted perc. rank =    1.178
+Sorge       : population =      140, n-th largest =  11705, percentile rank =    3.024, weighted perc. rank =    0.037
 ```
 
 Now you can more clearly see that Heidelberg, while being a sizable city, is actually not among the largest cities in Germany.
@@ -195,12 +195,12 @@ Tells you something about how joyful life must have been there in the past...)
 The weighted percentile rank also helps to keep the benchmarking values constant if we clip very small settlements.
 Here are the different measures when we apply a lower threshold of 1,000 population:
 ```text
-Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted percentile rank =  100.000
-Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.986, weighted percentile rank =   95.954
-Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.916, weighted percentile rank =   89.806
-Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.108, weighted percentile rank =   70.612
-Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   95.205, weighted percentile rank =   49.557
-Asselfingen : population =     1075, n-th largest =   6908, percentile rank =    3.722, weighted percentile rank =    0.327
+Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted perc. rank =  100.000
+Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.986, weighted perc. rank =   95.954
+Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.916, weighted perc. rank =   89.806
+Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.108, weighted perc. rank =   70.612
+Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   95.205, weighted perc. rank =   49.557
+Asselfingen : population =     1075, n-th largest =   6908, percentile rank =    3.722, weighted perc. rank =    0.327
 ```
 
 For the larger cities, the percentile rank doesn't change much.
