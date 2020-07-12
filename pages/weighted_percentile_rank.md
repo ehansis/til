@@ -1,8 +1,8 @@
-# Use a Weighted Percentile Rank to Benchmark in Skewed Distributions
+# Use a Weighted Percentile Rank to Benchmark against Skewed Distributions
 
 When you are presenting data, for example in a report or dashboard, it is often a good idea to indicate if
-a certain value is 'big' or 'small', compared to benchmarking data.
-As we will see in the following, this can be tricky.
+a certain value is 'large' or 'small', compared to benchmarking data.
+As we will see in the following, using a weighted percentile rank is a good option
 
 Many distributions that you find in the real world are highly skewed: there are many entities with small
 values and very few entities with large values.
@@ -18,6 +18,10 @@ As an example of such a distribution we are going to look at the size distributi
 I pulled these from the [GeoNames](http://www.geonames.org/) database.
 The actual data is not included in this repo, but you can freely download it from GeoNames.
 All plotting and analysis code is contained in [geonames_population_distribution.py](../assets/geonames_population_distribution.py).
+
+This is a histogram of population size per settlement, clipped to a max of 100,000 population 
+(to be able to resolve small population values):
+![Population distribution, histogram, clipped at max of 100,000](../assets/geonames_population_histogram.png)
 
 Here is the distribution of the settlement size plotted as a cumulative probability distribution.
 Population per settlement is shown on the vertical axis. 
@@ -41,40 +45,48 @@ So this is really a heavily skewed distribution.
 ([Zipf's law](https://en.wikipedia.org/wiki/Zipf%27s_law) is often cited for describing population distributions.)
 
 
-## Is this big?
+## Is this large?
 
 Now we get to the actual point of this post.
 Let's pick Heidelberg as an example city.
 It has a population of 143,345 (according to the GeoNames version that I used).
-Is this a 'big' city? Or rather medium-sized?
+Is this a 'large' city? Or rather medium-sized?
 
-Compared to the biggest settlement, Berlin with 3.4 million inhabitants, it's comparatively small.
-Yet, it's the 65th largest city in Germany.
+Compared to the largest settlement, Berlin with 3.4 million inhabitants, it's comparatively small.
+Yet, it's the 65th largest city in Germany (rank 12005 among 12069 places).
 We can convert this rank to a **percentile rank**, which is (close to) zero for the smallest settlement and 100 for the largest,
 to normalize out the length of our list.
 In that measure, Heidelberg would come in at 99.47, which appears quite high.
 In fact, if you only saw that number (and didn't know anything about Heidelberg), you might expect it to be much larger than it actually is.
 
-Here are these measures for a few more example cities:
+If you wanted to apply a label to a city to benchmark its size, you could take the percentile rank ``p`` and convert it as follows:
+* ``p < 10``: very small
+* ``10 <= p < 30``: small
+* ``30 <= p < 70``: medium
+* ``70 <= p < 90``: large
+* ``p >= 90``: very large
+
+You can of course pick other labels and thresholds, this just illustrates the original task of applying a benchmarking
+label to an entity. Here we would say that Heidelberg is 'very large'.
+
+Here are the results for a few example cities:
 ```text
-Berlin      : population =  3426354, rank =      1, percentile rank =  100.000
-Hamburg     : population =  1739117, rank =      2, percentile rank =   99.992
-Stuttgart   : population =   589793, rank =      7, percentile rank =   99.950
-Heidelberg  : population =   143345, rank =     65, percentile rank =   99.470
-Buxtehude   : population =    38192, rank =    345, percentile rank =   97.150
-Asselfingen : population =     1075, rank =   6908, percentile rank =   42.771
-Elend       : population =      583, rank =   8889, percentile rank =   26.357
-Sorge       : population =      140, rank =  11705, percentile rank =    3.024
+Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000
+Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.992
+Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.950
+Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.470
+Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   97.150
+Asselfingen : population =     1075, n-th largest =   6908, percentile rank =   42.771
+Elend       : population =      583, n-th largest =   8889, percentile rank =   26.357
+Sorge       : population =      140, n-th largest =  11705, percentile rank =    3.024
 ```
 
-(Try not to be confused by `rank` increasing as places get smaller and percentile rank decreasing.
-That's just the convention I chose here, so that `rank` can be interpreted as 'n-th largest', while I wanted the
-percentile rank to be 100 for the largest settlement.)
+(`n-th largest` is the length of the city list minus the 1-based rank, plus 1.)
 
 What do we see here?
-Both the rank and the percentile rank aren't really conveying a good intuition about the size of a settlement.
-The rank is meaningless unless you know the total length of the list.
-The percentile rank barely changes until settlements become quite small - from the value of 97.15 for Buxtehude you might greatly over-estimate its size.
+The percentile rank isn't really conveying a good intuition about the size of a settlement.
+It barely changes until settlements become quite small - from the value of 97.15 for Buxtehude you might greatly over-estimate its size,
+applying a label of 'very large' according to the above scheme.
 
 
 ## Big little bias
@@ -93,6 +105,8 @@ If you want to compute a measure for benchmarking against such highly skewed dis
 use a **weighted percentile rank** instead.
 The percentile rank as computed above gives you the percentage of _settlements_ that are of equal or smaller size than the one you are looking at.
 The **weighted** percentile rank gives you the percentage of _people_ that live in settlements of equal or smaller size than the one you have picked.
+This corresponds to the [weighted percentile method](https://en.wikipedia.org/wiki/Percentile#The_weighted_percentile_method) with the weights
+being equal to the values themselves.
 
 In a picture, you could also imagine this as follows:
 For each settlement, cut a piece of string that is proportional in length to its population.
@@ -100,7 +114,7 @@ Lay out these strings one after another, sorted from shortest to longest.
 Now, measure the length from the start of all strings to the one representing your city and compare it to the total length.
 This fraction, converted to a percentage, is the weighted percentile rank.
 
-Some more examples of how to intepret this:
+Some more examples of how to interpret this:
 * If you are looking at income distribution, the weighted percentile rank of a certain income level would tell you
   the percentage of money earned cumulatively by people with this income or less, compared to the total cumulative income.
 * For the example of Twitter followers, the weighted percentile rank of a certain follower count tells you the percentage of 
@@ -157,17 +171,17 @@ def weighted_percentile_rank(s):
 
 Let's look at the example city stats again, now including the weighted percentile rank:
 ```text
-Berlin      : population =  3426354, rank =      1, percentile rank =  100.000, weighted percentile rank =  100.000
-Hamburg     : population =  1739117, rank =      2, percentile rank =   99.992, weighted percentile rank =   96.063
-Stuttgart   : population =   589793, rank =      7, percentile rank =   99.950, weighted percentile rank =   90.082
-Heidelberg  : population =   143345, rank =     65, percentile rank =   99.470, weighted percentile rank =   71.405
-Buxtehude   : population =    38192, rank =    345, percentile rank =   97.150, weighted percentile rank =   50.919
-Asselfingen : population =     1075, rank =   6908, percentile rank =   42.771, weighted percentile rank =    3.018
-Elend       : population =      583, rank =   8889, percentile rank =   26.357, weighted percentile rank =    1.178
-Sorge       : population =      140, rank =  11705, percentile rank =    3.024, weighted percentile rank =    0.037
+Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted percentile rank =  100.000
+Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.992, weighted percentile rank =   96.063
+Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.950, weighted percentile rank =   90.082
+Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.470, weighted percentile rank =   71.405
+Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   97.150, weighted percentile rank =   50.919
+Asselfingen : population =     1075, n-th largest =   6908, percentile rank =   42.771, weighted percentile rank =    3.018
+Elend       : population =      583, n-th largest =   8889, percentile rank =   26.357, weighted percentile rank =    1.178
+Sorge       : population =      140, n-th largest =  11705, percentile rank =    3.024, weighted percentile rank =    0.037
 ```
 
-Now you can more clearly see that Heidelberg, while being a sizable city, is actually not among the biggest cities in Germany.
+Now you can more clearly see that Heidelberg, while being a sizable city, is actually not among the largest cities in Germany.
 In fact, almost 30% of the German population live in larger cities.
 Buxtehude is in the middle of the distribution according the weighted percentile rank, with about 50% living in larger 
 and 50% in smaller cities. (So if you looked for a 'typical' settlement, this might be a good choice in terms of size.)
@@ -181,18 +195,18 @@ Tells you something about how joyful life must have been there in the past...)
 The weighted percentile rank also helps to keep the benchmarking values constant if we clip very small settlements.
 Here are the different measures when we apply a lower threshold of 1,000 population:
 ```text
-Berlin      : population =  3426354, rank =      1, percentile rank =  100.000, weighted percentile rank =  100.000
-Hamburg     : population =  1739117, rank =      2, percentile rank =   99.986, weighted percentile rank =   95.954
-Stuttgart   : population =   589793, rank =      7, percentile rank =   99.916, weighted percentile rank =   89.806
-Heidelberg  : population =   143345, rank =     65, percentile rank =   99.108, weighted percentile rank =   70.612
-Buxtehude   : population =    38192, rank =    345, percentile rank =   95.205, weighted percentile rank =   49.557
-Asselfingen : population =     1075, rank =   6908, percentile rank =    3.722, weighted percentile rank =    0.327
+Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000, weighted percentile rank =  100.000
+Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.986, weighted percentile rank =   95.954
+Stuttgart   : population =   589793, n-th largest =      7, percentile rank =   99.916, weighted percentile rank =   89.806
+Heidelberg  : population =   143345, n-th largest =     65, percentile rank =   99.108, weighted percentile rank =   70.612
+Buxtehude   : population =    38192, n-th largest =    345, percentile rank =   95.205, weighted percentile rank =   49.557
+Asselfingen : population =     1075, n-th largest =   6908, percentile rank =    3.722, weighted percentile rank =    0.327
 ```
 
-For the bigger cities, the percentile rank doesn't change much.
+For the larger cities, the percentile rank doesn't change much.
 But for Asselfingen, close to the threshold, it dramatically drops from 42.8 to 3.7. 
 For the 42.8 you might have applied the level 'medium', while for 3.7 you would most likely have called it 'very small'.
-The town didn't change, just your benchmarking dataset did!
+The town didn't change, though!
 
 Now look at the weighted percentile rank: Asselfingen goes from 3.0 down to 0.3. While this is certainly a change, 
 the label applied to that rank would probably still be 'very small' in both cases.
@@ -202,4 +216,4 @@ the label applied to that rank would probably still be 'very small' in both case
 
 I have used weighted percentile ranks on many different occasions to apply labels like 'small', 'medium' or 'large' to entities.
 This has worked very well and seems to match intuition much better than simpler measures.
-You might have to think carfully for a second to understand what the number actually means, but that's totally worth it.
+You might have spend a minute of careful thought to understand what the number actually means in your particular case, but it's totally worth it.

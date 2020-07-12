@@ -67,7 +67,7 @@ def print_values(sel, name):
     assert len(sel) == 1
     sel = sel.iloc[0]
     print(
-        f"{sel['asciiname']:12s}: population = {sel['pop']:8d}, rank = {sel['inverse_rank']:6d}, "
+        f"{sel['asciiname']:12s}: population = {sel['pop']:8d}, n-th largest = {sel['inverse_rank']:6d}, "
         f"percentile rank = {sel['percentile_rank']:8.3f}, "
         f"weighted percentile rank = {sel['weighted_percentile_rank']:8.3f}"
     )
@@ -101,24 +101,32 @@ print_values(small_clipped, "Asselfingen")
 # compute cumulative distribution
 df["distrib"] = np.arange(len(df)) / len(df) * 100
 
-#
-# # plot the cumulative distribution
-# chart = (
-#     altair.Chart(df, width=700, height=400)
-#     .mark_line()
-#     .encode(
-#         x=altair.X(
-#             "distrib", axis=altair.Axis(title="Cumulative probability (percent)")
-#         )
-#     )
-# )
-#
-# chart.encode(
-#     y=altair.Y(
-#         "pop", axis=altair.Axis(title="Population"), scale=altair.Scale(type="log")
-#     )
-# ).save("geonames_population_distribution_log.png")
-#
-# chart.encode(y=altair.Y("pop", axis=altair.Axis(title="Population"))).save(
-#     "geonames_population_distribution_linear.png"
-# )
+
+# plot the cumulative distribution
+chart = (
+    altair.Chart(df, width=700, height=400)
+    .mark_line()
+    .encode(
+        x=altair.X(
+            "distrib", axis=altair.Axis(title="Cumulative probability (percent)")
+        )
+    )
+)
+
+chart.encode(
+    y=altair.Y(
+        "pop", axis=altair.Axis(title="Population"), scale=altair.Scale(type="log")
+    )
+).save("geonames_population_distribution_log.png")
+
+chart.encode(y=altair.Y("pop", axis=altair.Axis(title="Population"))).save(
+    "geonames_population_distribution_linear.png"
+)
+
+# plot a size histogram
+altair.Chart(df[df["pop"] <= 100_000], width=500, height=400).mark_bar().encode(
+    x=altair.X("pop", bin=altair.Bin(maxbins=100), axis=altair.Axis(title="Population")),
+    y='count()',
+).save(
+    "geonames_population_histogram.png"
+)
