@@ -163,7 +163,7 @@ To do this, I have implemented a small 'derived attribute' extension for ``attrs
 based on other attributes.
 For example, a string field ``rating_str`` would automatically be generated from the numerical field ``rating``.
 
-This is going to be the topic of a separate, future post.
+This is going to be the topic of a [separate post](derived_attrib.md).
 
 In ``dataclass`` objects, it appears that something similar could be done using
 [post-init processing](https://docs.python.org/3.7/library/dataclasses.html#post-init-processing).
@@ -171,4 +171,4 @@ I have not tried that myself, though.
 
 
 
-<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

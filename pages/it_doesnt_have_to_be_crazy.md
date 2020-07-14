@@ -80,3 +80,6 @@ After a couple of days and careful deliberation (!), peers send back written (!)
 Interviews, research and beta tests only give you simulated answers.
 Launching and observing the market is the only way to get true answers.
 
+
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

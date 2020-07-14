@@ -64,4 +64,4 @@ Also, `Fn+4` and `Fn+0` are mapped to line End/Start (Home). There are mappings 
 but I don't really use them.
 
 
-<<< Go back to the [table of contents](../README.md) || Follow on [twitter](https://twitter.com/EberhardHansis) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

@@ -217,3 +217,6 @@ the label applied to that rank would probably still be 'very small' in both case
 I have used weighted percentile ranks on many different occasions to apply labels like 'small', 'medium' or 'large' to entities.
 This has worked very well and seems to match intuition much better than simpler measures.
 You might have spend a minute of careful thought to understand what the number actually means in your particular case, but it's totally worth it.
+
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
