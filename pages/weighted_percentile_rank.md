@@ -2,14 +2,14 @@
 
 When you are presenting data, for example in a report or dashboard, it is often a good idea to indicate if
 a certain value is 'large' or 'small', compared to benchmarking data.
-As we will see in the following, using a weighted percentile rank is a good option
+As we will see in the following, using a weighted percentile rank is a good way to determine size for such a benchmarking.
 
 Many distributions that you find in the real world are highly skewed: there are many entities with small
 values and very few entities with large values.
 This is true, e.g., for the size distribution of companies (lots of small companies, very few really big ones),
 the distribution of income (many with low wages, very few billionaires) or
 the number of followers on twitter (lots of people with just a few followers, very few big influencers).
-[Power law distributions](https://en.wikipedia.org/wiki/Power_law) are a typical class of such distributions.
+In many cases, these follow [Power law distributions](https://en.wikipedia.org/wiki/Power_law).
 
 
 ## Population size distribution
@@ -18,9 +18,12 @@ As an example of such a distribution we are going to look at the size distributi
 I pulled these from the [GeoNames](http://www.geonames.org/) database.
 The actual data is not included in this repo, but you can freely download it from GeoNames.
 All plotting and analysis code is contained in [geonames_population_distribution.py](../assets/geonames_population_distribution.py).
+(Disclaimer: I'm not sure that the GeoNames DB doesn't double-count settlement units that are parts of larger units.
+For the point of this example, this doesn't matter, though.)
 
 This is a histogram of population size per settlement, clipped to a max of 100,000 population 
 (to be able to resolve small population values):
+
 ![Population distribution, histogram, clipped at max of 100,000](../assets/geonames_population_histogram.png)
 
 Here is the distribution of the settlement size plotted as a cumulative probability distribution.
@@ -67,9 +70,9 @@ If you wanted to apply a label to a city to benchmark its size, you could take t
 * ``p >= 90``: very large
 
 You can of course pick other labels and thresholds, this just illustrates the original task of applying a benchmarking
-label to an entity. Here we would say that Heidelberg is 'very large'.
+label to an entity. According to the above definition, we would say that Heidelberg is 'very large'.
 
-Here are the results for a few example cities:
+Here are the results for a few more example places:
 ```text
 Berlin      : population =  3426354, n-th largest =      1, percentile rank =  100.000
 Hamburg     : population =  1739117, n-th largest =      2, percentile rank =   99.992
@@ -81,7 +84,7 @@ Elend       : population =      583, n-th largest =   8889, percentile rank =   
 Sorge       : population =      140, n-th largest =  11705, percentile rank =    3.024
 ```
 
-(`n-th largest` is the length of the city list minus the 1-based rank, plus 1.)
+(`n-th largest` is the length of the city list minus the 0-based ascending rank.)
 
 What do we see here?
 The percentile rank isn't really conveying a good intuition about the size of a settlement.
@@ -91,9 +94,9 @@ applying a label of 'very large' according to the above scheme.
 
 ## Big little bias
 
-There is another issue with using the percentile rank as an indicator for 'intuitive' benchmarking:
+There is another issue with using the percentile rank (or the rank or 'n-th largest') as an indicator for 'intuitive' benchmarking:
 The percentile rank changes substantially if we add or remove a large number of small entities.
-For example, we might want to classify the very small settlements as not worth analyzing and
+For example, we might classify the very small settlements as not worth analyzing and
 drop them from the list.
 If we set a minimum size of 1,000 people, we would lose about 40% of the list, with ranks changing accordingly.
 Suddenly, a place with population of 1,037 would have a percentile rank around zero instead of the previous value of around 40.
@@ -131,7 +134,7 @@ Here is a Python function that computes the weighted percentile rank from a `pan
 def weighted_percentile_rank(s):
     """Get weighted percentile rank
 
-    Highest rank is guaranteed to be 100.
+    Highest rank is guaranteed to be 100 (unless the input series is all zeros or empty).
     Equal values get the same (max) rank.
 
     Args:
@@ -215,8 +218,8 @@ the label applied to that rank would probably still be 'very small' in both case
 ## Medium, please
 
 I have used weighted percentile ranks on many different occasions to apply labels like 'small', 'medium' or 'large' to entities.
-This has worked very well and seems to match intuition much better than simpler measures.
-You might have spend a minute of careful thought to understand what the number actually means in your particular case, but it's totally worth it.
+This has worked quite well and seems to match intuition much better than simpler measures.
+You might have to spend a minute of careful thought to understand what the number actually means in your particular case, but it's totally worth it.
 
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

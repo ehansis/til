@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Use a Weighted Percentile Rank to Benchmark against Skewed Distributions](pages/weighted_percentile_rank.md)
 * [It Doesn't Have to be Crazy at Work](pages/it_doesnt_have_to_be_crazy.md)
 * [def tree\(\): return defaultdict\(tree\)](pages/one_line_tree_defaultdict.md)
 * [Pixel-Perfect PDF comParison in Python](pages/pdf_comparison.md)
