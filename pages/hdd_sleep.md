@@ -93,10 +93,9 @@ out all the facts and boundary conditions that matter.
 Then, sleep.
 Your dreamy friend will do its thing, and maybe help you find that novel, creative solution.
 
-For many people just taking your mind off a problem and doing something relaxing also seems to help with problem solving.
+Oftentimes, just taking your mind off a problem and doing something relaxing also seems to help with problem solving.
 Having ideas in the shower is almost a cliche.
 For me, cycling works very well - some of the hardest problems I have had to tackle solved themselves while cycling home from the office.
-Yet, I can't offer you any scientific insights on showers and how they compare to REM sleep in terms of creativity.
 
 
 ## References
@@ -107,8 +106,6 @@ Yet, I can't offer you any scientific insights on showers and how they compare t
 * [D. J Cal et al. REM, not incubation, improves creativity by priming associative networks. PNAS 106 (25) 10130-10134, 2009](https://www.pnas.org/content/pnas/106/25/10130.full.pdf)
 * [How to Wake Up To Your Creativity, Time Magazine, 30 April 2017](https://time.com/4737596/sleep-brain-creativity/)
 * [P. Lewis et al. How memory replay in sleep boosts creative problem solving. Trends in Cognitive Sciences 22 (6), 2018](http://orca.cf.ac.uk/111453/)
-
-(If you think this article is inaccurate or vastly simplified, please help me make it better!)
 
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
