@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [REM Sleep and Hammock-Driven Development](pages/hdd_sleep.md)
 * [CORS, Tainted Canvases and getDataURL](pages/canvas_image_cors.md)
 * [My Picks from EuroPython 2020](pages/europython2020.md)
 * [Use a Weighted Percentile Rank to Benchmark against Skewed Distributions](pages/weighted_percentile_rank.md)
