@@ -104,19 +104,9 @@ df.set_index('some_column', inplace=True, drop=False)
 I find the first version easier to comprehend. There is an assignment, I know where things go, and
 I don't have to hunt for an `inplace=True` parameter somewhere in the function call.
 
-### Functional style
-
-[Functional programming](https://en.wikipedia.org/wiki/Functional_programming), or programming in a functional style
-in a general-purpose language like Python, has some nice advantages.
-Code written in a functional style can be much easier to test, comprehend and compose.
-
-Ideally you write only pure functions, i.e. ones that always return the same result when called with the same arguments
-and cannot be affected by mutable state or side effects.
-Mutating the state of an input object would be an undesirable side effect, so use immutable operations only.
-
 ### Method chaining
 
-Many of the DataFrame and Series methods can be chained, for conciseness and readability.
+Many of the DataFrame and Series methods can be chained for conciseness.
 For example, compare this
 ```python
 df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=['A', 'B', 'C'])
@@ -145,7 +135,7 @@ to append a column.
 
 ### Immutable surprises
 
-Sometimes mutability can cause surprising behaviour (and surprises are bad).
+Sometimes mutability can cause surprising behaviour (and surprises are, by definition, [bad](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)).
 Consider the following script:
 ```python
 import pandas as pd
@@ -198,3 +188,22 @@ The line `totals = sales` bound `totals` to the same DataFrame as `sales`, and t
 in-place operation `totals.set_index('item', inplace=True)` changed that DataFrame.
 The `position` information from the index is now lost forever!
 If we had used immutable operations everywhere, this particular problem could not have occurred.
+
+### Functional style
+
+[Functional programming](https://en.wikipedia.org/wiki/Functional_programming), or programming in a functional style
+in a general-purpose language like Python, has some nice advantages.
+Code written in a functional style can be much easier to test, comprehend and compose.
+
+Ideally you write most of your code as pure functions, i.e. ones that always return the same result when called with the same arguments
+and cannot be affected by mutable state or side effects.
+This makes functions act like mathematical operations that can be reasoned about in a similar fashion.
+
+Mutating the state of an input object would be an undesirable side effect, so don't do it.
+From a different angle: the mutable `set_index(..., inplace=True)` example from above **always** returns `None`, no matter what the input was.
+So it's impossible to reason about what the function is doing from its input and output.
+That's not nice from a functional programming perspective.
+
+
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

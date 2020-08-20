@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Chaining Immutable Pandas](pages/chaining_immutable_pandas.md)
 * [REM Sleep and Hammock-Driven Development](pages/hdd_sleep.md)
 * [CORS, Tainted Canvases and getDataURL](pages/canvas_image_cors.md)
 * [My Picks from EuroPython 2020](pages/europython2020.md)
