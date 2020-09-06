@@ -12,7 +12,7 @@ and which industries and occupations might be affected most.
 Those are very important questions.
 
 This post is on an aspect of automation that is sometimes mentioned but, I think, deserves more attention:
-**Automation can raise quality**.
+**Automation can improve quality**.
 I'm not necessarily talking about automation on the scale of robots building cars. 
 We can start at a lower level of automation, being introduced into our everyday computerized work life.
 
@@ -54,7 +54,7 @@ This is frustrating work and, even worse, extremely error-prone.
 Obviously, automation is not a panacea for achieving good quality.
 Automation lets you do things at scale, including making mistakes.
 However, it gives you the chance to make some mistakes just once and rule them out going forward,
-as you implement [automated tests](three_levels_analytics_testing.md) for your data processing workflows.
+as you implement the corrected process including [automated tests](three_levels_analytics_testing.md).
 
 I would guess, though, that the most important quality aspect of automation is the simplest: computers don't do typos.
 
