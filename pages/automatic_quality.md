@@ -43,10 +43,21 @@ Sure, they say, here's a web page - fill out the forms and it will spit out your
 Maybe you'd like that, or maybe not, because you would expect a human to be better suited to discuss with you all those different
 variables and eventualities that matter for long-term financial planning.
 
-I don't often see examples of over-automation in the wild, probably, because companies get rapid feedback that people don't like them.
+
+## Just the wrong amount
+
+I don't often see examples of over-automation in the wild*.
+Probably, one reason is that companies get rapid feedback that customers and employees don't like it.
+Another might be that over-automating requires explicit investment, so the costs are readily visible.
+
 However, I frequently see examples of under-automation: names typed into administrative forms multiple times, 
 numbers transcribed manually from one system into another, columns pushed around spreadsheets.
-This is frustrating work and, even worse, extremely error-prone.
+These are frustrating activities and extremely error-prone.
+And they are costly as well, but the costs are hidden: foregone productivity, annoyed customers/employees and 
+hunting down of errors after the fact.
+
+*(One exception is the voice robot that picks up the phone at Deutsche Telekom's customer service hotline, which
+asks many questions, doesn't understand many answers and is so very annoying!)
 
 
 ## Tested qualities
