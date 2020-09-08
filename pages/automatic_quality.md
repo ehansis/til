@@ -7,7 +7,7 @@ or [they won't](https://www.wired.com/2017/08/robots-will-not-take-your-job/), o
 and the covid-19 pandemic [also plays a role](https://www.economist.com/finance-and-economics/2020/07/30/the-fear-of-robots-displacing-workers-has-returned).
 My takeaway from this: It's hard to predict, nobody knows.
 
-The discussion on automation often focusses on saving labor costs, the associated job losses 
+The discussion on automation often focuses on saving labor costs, the associated job losses 
 and which industries and occupations might be affected most.
 Those are very important questions.
 
@@ -29,7 +29,7 @@ that helps you fill out forms.
 You type your name and birth date once and the system (maybe without you knowing it) fills that information into
 20 different databases and subsystems.
 That's neat, right? Or would you rather type your name 20 times?
-Probabaly not, and it would greatly increase the probability of typos, causing your lab results to not show up because you mis-typed your date of birth once.
+Probably not, and it would greatly increase the probability of typos, causing your lab results to not show up because you mis-typed your date of birth once.
 After checking in, you have the option to either see a doctor or to describe your symptoms to an automated system and get an automated diagnosis.
 I assume that you would prefer the former, because you feel that human compassion and intuition are a very important part of the diagnostic process.
 
@@ -70,7 +70,7 @@ as you implement the corrected process including [automated tests](three_levels_
 I would guess, though, that the most important quality aspect of automation is the simplest: computers don't do typos.
 
 (Here is an [article on famous typos](https://www.six-degrees.com/the-high-cost-of-small-mistakes-the-most-expensive-typos-of-all-time/),
-off-topic and for your entertainment only.)
+off-topic and for entertainment purposes only.)
 
 
 ## You, Robot
@@ -88,3 +88,6 @@ If you are working in an IT/data/geek function already, there's no excuse for yo
 This might require ditching some pointy-clicky proprietary tools in favor of open, scriptable ones, and to find automation work-arounds in some places.
 But, you will thank yourself for it, and so will your colleagues and customers.
 
+
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

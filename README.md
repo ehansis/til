@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Automatic Quality](pages/automatic_quality.md)
 * [Chaining Immutable Pandas](pages/chaining_immutable_pandas.md)
 * [REM Sleep and Hammock-Driven Development](pages/hdd_sleep.md)
 * [CORS, Tainted Canvases and getDataURL](pages/canvas_image_cors.md)
