@@ -1,6 +1,6 @@
 # Automatic Quality
 
-Following the media on the topic of automation in the past couple of years, it would be understandable if you were a bit confused
+Following the media on the topic of automation in the past couple of years, it would be understandable if you were a bit confused.
 Either [robots will take all our jobs](https://www.theguardian.com/commentisfree/2018/feb/01/robots-take-our-jobs-amazon-go-seattle),
 or [they won't](https://www.wired.com/2017/08/robots-will-not-take-your-job/), or they were just 
 [becoming our bosses](https://www.theverge.com/2020/2/27/21155254/automation-robots-unemployment-jobs-vs-human-google-amazon),
