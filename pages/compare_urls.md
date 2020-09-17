@@ -99,3 +99,5 @@ and differences in order and encoding removed from the query string. Very handy.
 
 Finally, the `__eq__` function tells Python to compare `Url` objects by comparing the `parts`, and hash them
 by hashing the `parts`.
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
