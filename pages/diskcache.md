@@ -1,9 +1,9 @@
 # Caching expensive function calls with the diskcache Python package
 
-Caching is useful in many applications: Your web app needs to run fairly expensive database queries
+Caching is useful in many applications: Your web app needs to run expensive database queries
 to serve a page. Your numerical model computes certain results several times because they are needed
 in different parts of the code.
-Your data dashboard re-computes results anew each time the dashboard is opened.
+Your analytics dashboard re-computes results anew each time the dashboard is opened.
 In all these situations, performance can be greatly increased by caching the results of a function call
 and making them instantly available for a repeat call with the same function arguments.
 
@@ -15,8 +15,9 @@ Here are a few options for implementing a cache (by no means an exhaustive selec
 
 ### lru_cache
 
-The very simplest cache is built right into the Python standard library: `functools.lru_cache` ([docs](https://docs.python.org/3/library/functools.html#functools.lru_cache)).
-This stores the N last recently used (hence, LRU) results of a function call in a dictionary, in memory.
+The simplest cache is built right into the Python standard library: `functools.lru_cache` ([docs](https://docs.python.org/3/library/functools.html#functools.lru_cache)).
+This stores the _N_ last recently used (hence, LRU) results of a function call in a dictionary, in memory.
+They are keyed by the function arguments.
 Using it is as simple as this:
 ```python
 from functools import lru_cache
@@ -27,7 +28,7 @@ def expensive_function(foo, bar):
     do_expensive_computation(bar)
 ```
 
-Calls to `expensive_function` are cached and repeated calls with the same arguments `foo` and `bar` are retrieved from the cache.
+Calls to `expensive_function` are cached. On repeat calls with the same arguments `foo` and `bar` the result is retrieved from the cache and the function is not actually run.
 Note that the function arguments need to be hashable, since they are used as dictionary keys!
 
 
@@ -46,11 +47,11 @@ I don't have experience with those, but they all require you to set up and manag
 
 ### DiskCache
 
-The package I have liked best so far, for general-purpose use, is [DiskCache](http://www.grantjenks.com/docs/diskcache/).
+The package I have used most so far is [DiskCache](http://www.grantjenks.com/docs/diskcache/).
 This is a disk-based cache, so, unlike `functools.lru_cache`, you can easily handle many gigabytes of cached data
-if you have a moderately large and fast disk.
+if you have a moderately large (and fast) disk.
 
-The page claims the following benefits:
+The project page claims the following benefits:
 
     Pure-Python
     Fully Documented
@@ -91,15 +92,18 @@ def fibonacci(number):
 ```
 
 Without caching, the recursive calls to `fibonacci` would cause the function to be called over and over again.
-With the `cache.memoize` deocorator, the result is cached for each `number` argument and the function is therefore
-only called once for each `number`
+With the `cache.memoize` decorator, the result is cached for each `number` argument and the function is therefore
+only called once for each `number`.
 
 
 ## Cache be gone!
 
 Once you have implemented a cache, you have gotten yourself a new problem, though: You need to think long and hard
-about when the cache needs to be cleared or single results evicted.
+about when the cache needs to be cleared or particular results evicted.
 Cached results may become outdated if, for example, data changes in your database.
 If the arguments to your query function stay the same, the cache won't know about the changed data and retrieve an outdated result.
 This can lead to some very confusing errors.
-But, how to solve that depends very much on your specific application...
+How to solve that depends very much on your specific application.
+That's the price you pay for performance...
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
