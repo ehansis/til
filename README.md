@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Caching expensive function calls with the diskcache Python package](pages/diskcache.md)
 * [Comparing URLs for Equality in Python Unit Tests](pages/compare_urls.md)
 * [Automatic Quality](pages/automatic_quality.md)
 * [Chaining Immutable Pandas](pages/chaining_immutable_pandas.md)
