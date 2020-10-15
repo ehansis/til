@@ -1,4 +1,4 @@
-# Real-life-compatible comparison of DataFrames in Python unit tests
+# Real-life-compatible comparison of Pandas DataFrames in Python unit tests
 
 ... sounds easy, right? Often, the `pandas.DataFrame.equals` function does the job.
 According to [the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.equals.html),
@@ -19,7 +19,7 @@ However, when writing unit tests, you might desire two other things:
    or refine your test code. The pandas-internal function gives you `True` or `False`, and nothing else.
 
 
-## Friend, find forthcoming a fresh free function
+## Help yourself, please
 
 Here is a little helper function that I use when comparing DataFrames in `pytest` unit tests.
 It uses approximate comparison for `float` values and strict comparison otherwise.
@@ -50,3 +50,5 @@ def compare_dataframes(a, b):
 ```
 
 Enjoy, and go test!
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)

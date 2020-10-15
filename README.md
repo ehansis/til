@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Real-life-compatible comparison of Pandas DataFrames in Python unit tests](pages/compare_dataframes.md)
 * [Caching expensive function calls with the diskcache Python package](pages/diskcache.md)
 * [Comparing URLs for Equality in Python Unit Tests](pages/compare_urls.md)
 * [Automatic Quality](pages/automatic_quality.md)
