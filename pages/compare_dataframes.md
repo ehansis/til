@@ -1,6 +1,6 @@
 # Real-life-compatible comparison of Pandas DataFrames in Python unit tests
 
-... sounds easy, right? Often, the `pandas.DataFrame.equals` function does the job.
+Comparing two Pandas DataFrames for equality ... sounds easy, right? Often, the `pandas.DataFrame.equals` function does the job.
 According to [the docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.equals.html),
 this function
 
@@ -10,21 +10,21 @@ So if you have two DataFrames and want to know if they are really, truly equal, 
 However, when writing unit tests, you might desire two other things:
 
 1) For floating point values, testing for (strict, bit-wise) equality is often not practical, because tiny differences in value might
-   still count as 'equal' in the sense of your test. Often, two floats computed with the same logic but with different code, 
+   still count as 'equal' in the sense of your test. Often, two floats computed with the same logic but with different code 
    are not bitwise equal due to round-off errors.
-   The `pytest` test package has a handy solution for this: comparing like `assert a == pytest.approx(b)` allows for tiny
+   The [pytest](https://docs.pytest.org/en/latest/) test package has a handy solution for this: comparing like `assert a == pytest.approx(b)` allows for tiny
    differences to still evaluate as true assertion.
    
 2) When the DataFrames are _not_ equal, it is very handy to get some information on how they differ, so that you can hunt down bugs
-   or refine your test code. The pandas-internal function gives you `True` or `False`, and nothing else.
+   or refine your test code. The pandas `euqals` function gives you `True` or `False`, and nothing else.
 
 
 ## Help yourself, please
 
-Here is a little helper function that I use when comparing DataFrames in `pytest` unit tests.
+Here is a little helper function that I use when comparing DataFrames in [pytest](https://docs.pytest.org/en/latest/) unit tests.
 It uses approximate comparison for `float` values and strict comparison otherwise.
 Also, if the DataFrames are unequal, it tells you a bit about where they differ.
-The index and column order doesn't have to be equal between the DataFrames.
+The index and column orders don't have to be equal between the DataFrames.
 
 ```python
 import math
