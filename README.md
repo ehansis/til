@@ -5,6 +5,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [If Nobody is Watching, Will You Self-Automate?](pages/wfh_self_automation.md)
 * [Real-life-compatible comparison of Pandas DataFrames in Python unit tests](pages/compare_dataframes.md)
 * [Caching expensive function calls with the diskcache Python package](pages/diskcache.md)
 * [Comparing URLs for Equality in Python Unit Tests](pages/compare_urls.md)
