@@ -1,6 +1,6 @@
 # Mysterious Metaclasses
 
-The Python `metaclass` concept may be unknown or mysterious to you - at least it was and still is to me.
+The Python `metaclass` concept may be unknown or somewhat mysterious to you - at least it was and still is to me.
 I'm not going to try and explain metaclasses here, because I would probably get the details wrong and 
 [other people](https://duckduckgo.com/?q=Python+metaclass) have done a better job doing that.
 
@@ -8,14 +8,14 @@ I'm not going to try and explain metaclasses here, because I would probably get 
 ## Why???
 
 What I want to offer you first is my (current) understanding of what metaclasses are good for:
-By applying a metaclass to some base class, you can intercept the construction of derived classes from the base class
-and influence the construction of the derived class. 
+By applying a metaclass to a base class, you can intercept and influence the construction of 
+derived classes from the base class. 
 
 For example, using a metaclass you could define constraints that all classes derived from
-your base class have to meet, without knowing about or touching the derived classes.
+your base class have to meet, without knowing details about or touching the derived classes.
 This is the example shown in James's video (see below).
 
-Another application would be to perform some kind of task for each class that is being derived from your base class.
+Another application would be to perform some kind of task for each derived class.
 For example, I'm using this in my code to perform an automatic 'registration' of classes (see belower).
 
 
@@ -34,7 +34,7 @@ However, here's an example of where I found them quite useful:
 
 I am defining 'filter' classes that perform some filtering task on data (the details don't matter here).
 All filter classes derive from a common base class `FilterBase`.
-However, I would like to have a registry of all the filters that I wrote, i.e., of all classes derived from `FilterBase`.
+I would like to have a registry of all the filters that I wrote, i.e., a collection of all classes derived from `FilterBase`.
 This is where the metaclass `FilterRegistration` comes in:
 
 ```python
@@ -70,4 +70,8 @@ This class is automatically added to the filter registry, which looks like this 
 {'MyFilter': <class '__main__.MyFilter'>}
 ```
 
-So I can happily go about coding all my filters, never having to worry about filling the filter registry again.
+So I can happily go about coding all my filters.
+And, automagically, I will later be able to find all of them in the `filter_registry`.
+
+
+<<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
