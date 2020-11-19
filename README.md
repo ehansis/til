@@ -7,6 +7,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [PyData Global 2020, Episode 1/3](pages/pydataglobal2020_1.md)
 * [Mysterious Metaclasses](pages/metaclasses.md)
 * [If Nobody is Watching, Will You Self-Automate?](pages/wfh_self_automation.md)
 * [Real-life-compatible comparison of Pandas DataFrames in Python unit tests](pages/compare_dataframes.md)
