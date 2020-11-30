@@ -7,8 +7,8 @@ Big thanks to the conference team and [NumFocus](https://numfocus.org/) for orga
 
 There was so much good stuff to see and hear at the conference that I will split my notes over three posts.
 * The first (this one here) will be about the conference format, data analysis methods and handy tools.
-* The [second](pydataglobal2020_2.md) will be about ML model explainability and method selection.
-* The [third](pydataglobal2020_3.md) post will feature data visualization topics and some hard-core internal `pandas` stuff.
+* The [second](pydataglobal2020_2.md) will be about ML model explainability and some advanced Pandas stuff.
+* The [third](pydataglobal2020_3.md) post will feature data visualization topics.
 
 
 ## My thoughts on the conference format
@@ -116,7 +116,7 @@ Here are some great tool tips, collected from various presentations:
 * [loguru](https://github.com/Delgan/loguru): Very simple to use logging package, with colors.
 
 
-(Disclaimer: I tried my very best to accurately represent the presentations. Let me know if I got something wrong.)
+(Disclaimer: I tried my very best to accurately represent the presentations. Let me know in case I got something wrong.)
 
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
