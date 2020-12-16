@@ -7,6 +7,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [PyData Global 2020, Episode 3/3](pages/pydataglobal2020_3.md)
 * [PyData Global 2020, Episode 2/3](pages/pydataglobal2020_2.md)
 * [PyData Global 2020, Episode 1/3](pages/pydataglobal2020_1.md)
 * [Mysterious Metaclasses](pages/metaclasses.md)
