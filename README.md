@@ -7,6 +7,7 @@ This is an assortment of insights into a variety of topics, mostly of a technica
 
 ## Content, newest first
 
+* [Fiddly Fonts and Ubiquitous Browsers](pages/fonts_and_browsers.md)
 * [Indexing with floats in pandas or xarray is tricky!](pages/pandas_xarray_float_selection.md)
 * [PyData Global 2020, Episode 3/3](pages/pydataglobal2020_3.md)
 * [PyData Global 2020, Episode 2/3](pages/pydataglobal2020_2.md)

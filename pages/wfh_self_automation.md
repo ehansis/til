@@ -22,3 +22,5 @@ might be turned into an increase in productivity and quality of life, with autom
 
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
+
+--> If you would like to be notified of new posts, delete all the 'z's and drop me a line at til@ehzzzanszzzis.de

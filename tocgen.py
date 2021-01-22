@@ -52,7 +52,10 @@ def add_toc_links():
         if "README.md" not in lines[-1]:
             lines.append("\n\n")
             lines.append("<<< Go back to the [table of contents](../README.md) "
-                         "|| Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)")
+                         "|| Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)\n"
+                         "\n"
+                         "--> If you would like to be notified of new posts, delete all the 'z's and drop"
+                         "me a line at til@ehzzzanszzzis.de")
 
         with open(md_file, "w") as f:
             f.write("".join(lines))

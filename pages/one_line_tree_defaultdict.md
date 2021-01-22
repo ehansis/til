@@ -18,3 +18,5 @@ see e.g. [here](https://gist.github.com/hrldcpr/2012250) for a longer explanatio
 I like it that there are so many simple things to discover in Python!)
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
+
+--> If you would like to be notified of new posts, delete all the 'z's and drop me a line at til@ehzzzanszzzis.de

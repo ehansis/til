@@ -145,3 +145,5 @@ def scatter_label_placement(point_x, point_y, k, epsilon=1.0e-6, random_seed=345
 
 
 <<< Go back to the [table of contents](../README.md) || Opinions are mine, not necessarily those of [Vebeto GmbH](https://www.vebeto.de)
+
+--> If you would like to be notified of new posts, delete all the 'z's and drop me a line at til@ehzzzanszzzis.de
